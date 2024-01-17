@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="/styles/style.css">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 </head>
 
@@ -20,8 +20,22 @@
         <h2>Contáctanos</h2>
         <form action="recibido.html" method="get">
             <input type="text" name="nombre" id="nombre" placeholder="Nombre">
+            <br>
             <input type="email" name="correo" id="correo" placeholder="Correo Electrónico">
-            
+            <br>
+            <label for="informacion">Solicitud de información adicional</label>
+            <br>
+            <input type="radio" name="informacion" id="informacion" value="1">
+            <br>
+            <label for="reserva">Reserva de ruta</label>
+            <br>
+            <input type="radio" name="reserva" id="reserva" value="2">
+            <br>
+            <input type="button" value="Info">
+            <br>
+            <textarea name="mensaje" id="mensaje" cols="30" rows="10"></textarea>
+            <br>
+            <input type="submit" value="enviar">
         </form>
     </main>
 </body>
