@@ -10,12 +10,44 @@ const informacion = document.querySelector('#informacion');
 const reserva = document.querySelector('#reserva');
 const info = document.querySelector('#info');
 const mensaje = document.querySelector('#mensaje');
-const enviar =document.querySelector('#enviar');
-
+const enviar = document.querySelector('#enviar');
+const errores = document.querySelector('#errores');
 
 
 
 let mensajesErrores = []
+
+function mostrarDatos(){
+    for (let i=0;i<document.formulario.informacion.length; i++){
+    if (document.formulario.informacion[i].checked)
+    alert(document.formulario.informacion[i].value);
+    }
+}
+
+
+const validar = (e) => {
+    e.preventDefault()
+
+    mensajesErrores = []
+
+    nombre.value.trim().length === 0 && mensajesErrores.push('El nombre es un campo obligatorio')
+    !/^[A-Z][A-z]+[.]$/.test(nombre.value.trim()) && mensajesErrores.push('Un nombre propio comienza siempre por una letra mayúscula y no contiene números');
+    !/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,4}$/.test(correo.value.trim()) ? mensajesErrores.push("Introduce una dirección de correo electrónico válida") : null
+    mensaje.value.trim().length < 10 && mensajesErrores.push('Mensaje demasiado corto')
+
+    if (mensajesErrores.length === 0 && confirm("¿Estás seguro de enviar el formulario?")) {
+        formulario.submit()
+    } else if (mensajesErrores.length > 0) {
+        errores.textContent = ""
+        console.log(mensajesErrores)
+        mensajesErrores.forEach(function (mensaje) {
+            const lili = document.createElement('li')
+            lili.textContent = mensaje
+            errores.appendChild(lili)
+        })
+    }
+}
+formulario.addEventListener('submit', validar);
 
 
 

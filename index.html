@@ -17,27 +17,29 @@
         </section>
     </header>
     <main class="conteiner-form">
-        <h2>Contáctanos</h2>
-        <form action="recibido.html" method="get">
+        <section id="divform">
+            <form action="recibido.html" method="get" id="formulario">
+            <h2>Contáctanos</h2>
             <input type="text" name="nombre" id="nombre" placeholder="Nombre">
-            <br>
-            <input type="email" name="correo" id="correo" placeholder="Correo Electrónico">
-            <br>
-            <label for="informacion">Solicitud de información adicional</label>
-            <br>
-            <input type="radio" name="informacion" id="informacion" value="1">
-            <br>
-            <label for="reserva">Reserva de ruta</label>
-            <br>
-            <input type="radio" name="reserva" id="reserva" value="2">
-            <br>
-            <input type="button" value="Info" id="info">
-            <br>
-            <textarea name="mensaje" id="mensaje" cols="30" rows="10"></textarea>
-            <br>
-            <input type="submit" value="enviar" id="enviar">
-        </form>
-        <ul class="errores"></ul>
+                <br>
+                <input type="email" name="correo" id="correo" placeholder="Correo Electrónico">
+                <br>
+                <label for="informacion">Solicitud de información adicional</label>
+                <br>
+                <input type="radio" name="informacion" id="informacion-1" value="¿Tienes alguna duda? Selecciona esta opción para tratar tu consulta con mayor detenimiento.">
+                <br>
+                <label for="reserva">Reserva de ruta</label>
+                <br>
+                <input type="radio" name="informacion" id="informacion-2" value="El senderismo en Asturias es una actividad apasionante. Selecciona esta opción y te aportaremos las rutas disponibles, horarios... vía email.">
+                <br>
+                <input type="button" value="Info" id="info" onclick="mostrarDatos()">
+                <br>
+                <textarea name="mensaje" id="mensaje" cols="30" rows="10" placeholder="Por favor, inserta un mensaje"></textarea>
+                <br>
+                <input type="submit" value="enviar" id="enviar">
+                <ul class="errores" id="errores"></ul>
+            </form>
+        </section>
     </main>
     <script src="/scripts/main.js"></script>
 </body>
